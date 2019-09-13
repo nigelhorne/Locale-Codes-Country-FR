@@ -29,6 +29,7 @@ genders of the countries.
 
 =head2 new
 
+Creates a Locale::Codes::Country::FR object.
 =cut
 
 sub new {
@@ -43,6 +44,7 @@ sub new {
 =head2 en_country2gender
 
 Take a country (in English) and return 'M' and 'F'.
+Can be used in OO or procedural mode.
 
 =cut
 
@@ -65,6 +67,7 @@ sub en_country2gender {
 =head2 country2fr
 
 Given a country in English, translate into French.
+Can be used in OO or procedural mode.
 
 =cut
 
@@ -95,7 +98,7 @@ Nigel Horne, C<< <njh at bandsman.co.uk> >>
 
 =head1 BUGS
 
-Lots of countries to be done.
+Lots of countries to be done.  This initial release is a POC.
 
 Gender exceptions aren't handled.
 

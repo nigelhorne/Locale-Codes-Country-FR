@@ -112,7 +112,7 @@ things to happen.
 
 =head1 SEE ALSO
 
-L<<Locale::Codes>
+L<Locale::Codes>
 
 =head1 SUPPORT
 

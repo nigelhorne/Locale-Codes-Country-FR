@@ -3,10 +3,10 @@ use warnings;
 use ExtUtils::MakeMaker 6.64;	# 6.64 for TEST_REQUIRES
 
 WriteMakefile(
-	NAME		=> 'Local::Codes::Country::FR',
+	NAME		=> 'Locale::Codes::Country::FR',
 	AUTHOR		=> q{Nigel Horne <njh@bandsman.co.uk>},
 	VERSION_FROM	=> 'lib/Locale/Codes/Country/FR.pm',
-	ABSTRACT_FROM	   => 'lib/Locale/Codes/Country/FR.pm',
+	ABSTRACT_FROM   => 'lib/Locale/Codes/Country/FR.pm',
 	((defined($ExtUtils::MakeMaker::VERSION) &&
 	 ($ExtUtils::MakeMaker::VERSION >= 6.3002))
 	  ? ('LICENSE'=> 'GPL')

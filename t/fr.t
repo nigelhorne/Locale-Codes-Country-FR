@@ -2,7 +2,7 @@
 
 use strict;
 use warnings;
-use Test::Most tests => 7;
+use Test::Most tests => 8;
 use Test::NoWarnings;
 
 BEGIN {
@@ -15,4 +15,5 @@ FR: {
 	my $l = new_ok('Locale::Codes::Country::FR');
 	ok($l->country2fr('England') eq 'Angleterre');
 	ok($l->en_country2gender('England') eq 'F');
+	ok($l->en_country2gender('Canada') eq 'M');
 }

@@ -42,7 +42,7 @@ sub new {
 
 =head2 en_country2gender
 
-Take a country and return 'M' and 'F'.
+Take a country (in English) and return 'M' and 'F'.
 
 =cut
 

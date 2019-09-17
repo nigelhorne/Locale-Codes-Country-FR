@@ -23,7 +23,7 @@ WriteMakefile(
 		'Locale::Codes' => 3.59,	# Silence noisy warn messages in perl 5.28
 	},
 	dist		=> { COMPRESS => 'gzip -9f', SUFFIX => 'gz', },
-	clean		=> { FILES => 'Locale-Codes/Country-FR-*' },
+	clean		=> { FILES => 'Locale-Codes-Country-FR-*' },
 	# META_ADD => {
 		# provides => {}
 	# },
@@ -32,15 +32,15 @@ WriteMakefile(
 		resources => {
 			repository => {
 				type => 'git',
-				url => 'git://github.com/nigelhorne/Locale-Codes/Country-FR.git',
-				web => 'https://github.com/nigelhorne/Locale-Codes/Country-FR',
-				repository => 'https://github.com/nigelhorne/Locale-Codes/Country-FR',
+				url => 'git://github.com/nigelhorne/Locale-Codes-Country-FR.git',
+				web => 'https://github.com/nigelhorne/Locale-Codes-Country-FR',
+				repository => 'https://github.com/nigelhorne/Locale-Codes-Country-FR',
 			},
 			bugtracker => {
-				# web => 'https://rt.cpan.org/Public/Dist/Display.html?Name=Locale-Codes/Country-FR',
-				# mailto => 'bug-Locale-Codes/Country-FR@rt.cpan.org'
-				web => 'https://github.com/nigelhorne/Locale-Codes/Country-FR/issues',
-				url => 'https://github.com/nigelhorne/Locale-Codes/Country-FR/issues',
+				# web => 'https://rt.cpan.org/Public/Dist/Display.html?Name=Locale-Codes-Country-FR',
+				# mailto => 'bug-Locale-Codes-Country-FR@rt.cpan.org'
+				web => 'https://github.com/nigelhorne/Locale-Codes-Country-FR/issues',
+				url => 'https://github.com/nigelhorne/Locale-Codes-Country-FR/issues',
 			}
 		
 		},

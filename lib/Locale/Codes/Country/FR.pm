@@ -30,6 +30,7 @@ genders of the countries.
 =head2 new
 
 Creates a Locale::Codes::Country::FR object.
+
 =cut
 
 sub new {

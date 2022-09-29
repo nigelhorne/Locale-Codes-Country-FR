@@ -144,7 +144,7 @@ L<http://search.cpan.org/dist/Locale-Codes-Country-FR/>
 
 =head1 LICENSE AND COPYRIGHT
 
-Copyright 2019 Nigel Horne.
+Copyright 2019-2022 Nigel Horne.
 
 This program is released under the following licence: GPL2
 
@@ -154,10 +154,14 @@ This program is released under the following licence: GPL2
 __DATA__
 @@ countries
 Australia:Australie
+Algeria::Algérie
+Belgium::Belgique
 Canada:Canada
 England:Angleterre
 France:France
 New Zealand:Nouvelle-Zélande
+Netherlands::Pays-Bas
 Scotland:Écosse
-United States:Etats-Unis
-USA:Etats-Unis
+Senegal::Sénégal
+United States:États-Unis
+USA:États-Unis

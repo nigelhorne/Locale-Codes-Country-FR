@@ -51,7 +51,7 @@ Can be used in OO or procedural mode.
 
 sub en_country2gender {
 	my $arg = shift;
-	
+
 	if(ref($arg) ne __PACKAGE__) {
 		return __PACKAGE__->new()->en_country2gender($arg);
 	}
@@ -74,7 +74,7 @@ Can be used in OO or procedural mode.
 
 sub country2fr {
 	my $arg = shift;
-	
+
 	if(ref($arg) ne __PACKAGE__) {
 		return __PACKAGE__->new()->country2fr($arg);
 	}

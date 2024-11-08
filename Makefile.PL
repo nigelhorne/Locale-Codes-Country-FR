@@ -2,6 +2,15 @@ use strict;
 use warnings;
 use ExtUtils::MakeMaker 6.64;	# 6.64 for TEST_REQUIRES
 
+my $dist = {
+	COMPRESS => 'gzip -9f',
+	SUFFIX => 'gz'
+};
+
+if($^O eq 'darwin') {
+	$dist->{'TAR'} = 'gtar';
+}
+
 WriteMakefile(
 	NAME		=> 'Locale::Codes::Country::FR',
 	AUTHOR		=> q{Nigel Horne <njh@bandsman.co.uk>},
@@ -13,7 +22,9 @@ WriteMakefile(
 	  : ()),
 	PL_FILES	=> {},
 	TEST_REQUIRES => {
+		'Test::DescribeMe' => 0,
 		'Test::Most' => 0,
+		'Test::Needs' => 0,
 		'Test::NoWarnings' => 0,
 		# 'Test::Kwalitee' => 0,
 	},
@@ -21,8 +32,7 @@ WriteMakefile(
 		'Data::Section::Simple' => 0,
 		'Locale::Codes::Country' => 0,
 		'Locale::Codes' => 3.59,	# Silence noisy warn messages in perl 5.28
-	},
-	dist		=> { COMPRESS => 'gzip -9f', SUFFIX => 'gz', },
+	}, dist => $dist,
 	clean		=> { FILES => 'Locale-Codes-Country-FR-*' },
 	# META_ADD => {
 		# provides => {}

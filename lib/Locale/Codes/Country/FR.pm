@@ -5,6 +5,7 @@ use strict;
 
 use Data::Section::Simple;
 use Locale::Codes::Country;
+use Scalar::Util;
 
 our @ISA = ('Locale::Codes::Country');
 
@@ -34,11 +35,17 @@ Creates a Locale::Codes::Country::FR object.
 =cut
 
 sub new {
-	my $proto = shift;
-	my $class = ref($proto) || $proto;
+	my $class = shift;
 
-	return unless(defined($class));
+	if(!defined($class)) {
+		# FIXME: this only works when no arguments are given
+		$class = __PACKAGE__;
+	} elsif(Scalar::Util::blessed($class)) {
+		# If $class is an object, clone it with new arguments
+		return bless { %{$class} }, ref($class);
+	}
 
+	# Return the blessed object
 	return bless { }, $class;
 }
 

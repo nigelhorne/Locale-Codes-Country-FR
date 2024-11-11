@@ -32,6 +32,7 @@ WriteMakefile(
 		'Data::Section::Simple' => 0,
 		'Locale::Codes::Country' => 0,
 		'Locale::Codes' => 3.59,	# Silence noisy warn messages in perl 5.28
+		'Scalar::Util' => 0
 	}, dist => $dist,
 	clean		=> { FILES => 'Locale-Codes-Country-FR-*' },
 	# META_ADD => {

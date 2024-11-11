@@ -56,20 +56,20 @@ Can be used in OO or procedural mode.
 
 =cut
 
-sub en_country2gender {
-	my $arg = shift;
+sub en_country2gender
+{
+	my ($self, $country) = @_;
 
-	if(ref($arg) ne __PACKAGE__) {
-		return __PACKAGE__->new()->en_country2gender($arg);
+	# Ensure we are working within the object context
+	unless(ref $self && (ref($self) eq __PACKAGE__)) {
+		return __PACKAGE__->new->en_country2gender($self);
 	}
 
-	my $country = $arg->country2fr(shift);
+	# Translate country to French equivalent
+	$country = $self->country2fr($country);
 
-	# FIXME:  Exceptions e.g. Mexico
-	if($country =~ /e$/) {
-		return 'F';
-	}
-	return 'M';
+	# Determine gender based on French spelling convention
+	return $country =~ /e$/i ? 'F' : 'M';
 }
 
 =head2 country2fr
@@ -80,24 +80,17 @@ Can be used in OO or procedural mode.
 =cut
 
 sub country2fr {
-	my $arg = shift;
+	my ($self, $english) = @_;
 
-	if(ref($arg) ne __PACKAGE__) {
-		return __PACKAGE__->new()->country2fr($arg);
+	# Ensure we are working within the object context
+	unless(ref $self && (ref($self) eq __PACKAGE__)) {
+		return __PACKAGE__->new->country2fr($self);
 	}
 
-	my $english = shift;
+	# Load the country data section once
+	$self->{country_map} ||= { map { split /:/ } split /\n/, Data::Section::Simple::get_data_section('countries') };
 
-	my $data = Data::Section::Simple::get_data_section('countries');
-
-	my @line = split /\n/, $data;
-
-	for (@line) {
-		my($en, $fr) = split /:/;
-		if($en eq $english) {
-			return $fr;
-		}
-	}
+	return $self->{country_map}{$english};
 }
 
 =head1 AUTHOR
@@ -139,10 +132,6 @@ You can also look for information at:
 
 L<http://rt.cpan.org/NoAuth/Bugs.html?Dist=Locale-Codes-Country-FR>
 
-=item * CPAN Ratings
-
-L<http://cpanratings.perl.org/d/Locale-Codes-Country-FR>
-
 =item * Search CPAN
 
 L<http://search.cpan.org/dist/Locale-Codes-Country-FR/>
@@ -151,7 +140,7 @@ L<http://search.cpan.org/dist/Locale-Codes-Country-FR/>
 
 =head1 LICENSE AND COPYRIGHT
 
-Copyright 2019-2022 Nigel Horne.
+Copyright 2019-2024 Nigel Horne.
 
 This program is released under the following licence: GPL2
 

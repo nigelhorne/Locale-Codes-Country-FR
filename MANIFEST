@@ -10,9 +10,9 @@ t/coverage.t
 t/eof.t
 t/eol.t
 t/fr.t
+t/modules-used.t
 t/pod-cm.t
 t/pod-synopsis.t
 t/pod.t
 t/unused.t
-t/used.t
 t/vars.t

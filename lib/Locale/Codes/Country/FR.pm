@@ -25,9 +25,6 @@ our $VERSION = '0.02';
 
 DO NOT USE YET - THIS IS STILL P.O.C. code.
 
-A sub-class of L<Locale::Codes> which adds country names in French and
-genders of the countries.
-
 C<Locale::Codes::Country::FR> is a Perl module that extends L<Locale::Codes::Country> by adding French translations of country names and determining their grammatical gender based on naming conventions.
 It provides an easy-to-use interface for converting English country names into French and classifying them as masculine or feminine.
 The module supports both object-oriented and procedural usage.

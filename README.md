@@ -10,9 +10,6 @@ Version 0.02
 
 DO NOT USE YET - THIS IS STILL P.O.C. code.
 
-A sub-class of [Locale::Codes](https://metacpan.org/pod/Locale%3A%3ACodes) which adds country names in French and
-genders of the countries.
-
 `Locale::Codes::Country::FR` is a Perl module that extends [Locale::Codes::Country](https://metacpan.org/pod/Locale%3A%3ACodes%3A%3ACountry) by adding French translations of country names and determining their grammatical gender based on naming conventions.
 It provides an easy-to-use interface for converting English country names into French and classifying them as masculine or feminine.
 The module supports both object-oriented and procedural usage.

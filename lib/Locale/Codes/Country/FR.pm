@@ -15,16 +15,23 @@ Locale::Codes::Country::FR - French countries
 
 =head1 VERSION
 
-Version 0.01
+Version 0.02
 
 =cut
 
-our $VERSION = '0.01';
+our $VERSION = '0.02';
 
 =head1 SYNOPSIS
 
+DO NOT USE YET - THIS IS STILL P.O.C. code.
+
 A sub-class of L<Locale::Codes> which adds country names in French and
 genders of the countries.
+
+``Locale::Codes::Country::FR`` is a Perl module that extends L<Locale::Codes::Country> by adding French translations of country names and determining their grammatical gender based on naming conventions.
+It provides an easy-to-use interface for converting English country names into French and classifying them as masculine or feminine.
+The module supports both object-oriented and procedural usage.
+This module will be useful for applications requiring localized country names and gender classification in French.
 
 =head1 SUBROUTINES/METHODS
 
@@ -68,6 +75,13 @@ sub en_country2gender
 	# Translate country to French equivalent
 	$country = $self->country2fr($country);
 
+	return if(!defined($country));
+
+	# Masculine countries that and with an 'e'
+	if(($country eq 'Mexique') || ($country eq 'Mozambique')) {
+		return 'M';
+	}
+
 	# Determine gender based on French spelling convention
 	return $country =~ /e$/i ? 'F' : 'M';
 }
@@ -99,9 +113,15 @@ Nigel Horne, C<< <njh at bandsman.co.uk> >>
 
 =head1 BUGS
 
-Lots of countries to be done.  This initial release is a POC.
+Please report any bugs or feature requests to the author.
+This module is provided as-is without any warranty.
 
-Gender exceptions aren't handled.
+Lots of countries to be done.
+This initial release is a POC.
+While it covers a basic set of country names,
+future improvements may include handling gender exceptions and expanding the dataset.
+
+Gender exceptions aren't handled fully.
 
 Please report any bugs or feature requests to C<bug-locale-codes-country at rt.cpan.org>,
 or through the web interface at
@@ -140,7 +160,7 @@ L<http://search.cpan.org/dist/Locale-Codes-Country-FR/>
 
 =head1 LICENSE AND COPYRIGHT
 
-Copyright 2019-2024 Nigel Horne.
+Copyright 2019-2025 Nigel Horne.
 
 This program is released under the following licence: GPL2
 
@@ -155,6 +175,8 @@ Belgium::Belgique
 Canada:Canada
 England:Angleterre
 France:France
+Mexico::Mexique
+Mozambique::Mozambique
 New Zealand:Nouvelle-Zélande
 Netherlands::Pays-Bas
 Scotland:Écosse

@@ -6,6 +6,7 @@ MANIFEST			This list of files
 README.md
 t/00-load.t
 t/20-new.t
+t/30-basics.t
 t/coverage.t
 t/eof.t
 t/eol.t
